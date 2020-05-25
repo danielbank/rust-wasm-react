@@ -13,14 +13,17 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Cluster {
     pub points: Vec<Vec<f32>>,
+    pub epsilon: f64,
+    pub min_points: usize,
 }
 
 #[wasm_bindgen]
 pub fn cluster(input: &JsValue) -> Vec<f32> {
     let cluster: Cluster = input.into_serde().unwrap();
-    let model = dbscan::Model::new(1.0, 3);
+    let model = dbscan::Model::new(cluster.epsilon, cluster.min_points);
     let mut output = Vec::new();
     for point in model.run(&cluster.points).iter() {
         match point {
