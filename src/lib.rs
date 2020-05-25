@@ -1,5 +1,9 @@
+#[macro_use]
+extern crate serde_derive;
+
 mod utils;
 
+use dbscan::Classification::{Core, Edge, Noise};
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -8,12 +12,22 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-extern {
-    fn alert(s: &str);
+#[derive(Deserialize)]
+pub struct Cluster {
+    pub points: Vec<Vec<f32>>,
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, rust-wasm-react!");
+pub fn cluster(input: &JsValue) -> Vec<f32> {
+    let cluster: Cluster = input.into_serde().unwrap();
+    let model = dbscan::Model::new(1.0, 3);
+    let mut output = Vec::new();
+    for point in model.run(&cluster.points).iter() {
+        match point {
+            Core(cluster_num) => output.push(cluster_num.clone() as f32),
+            Edge(cluster_num) => output.push(cluster_num.clone() as f32),
+            Noise => output.push(-1.0),
+        }
+    }
+    output
 }
