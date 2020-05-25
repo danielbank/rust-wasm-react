@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rust-wasm-react/static/css/main.d275bea4.chunk.css",
+    "main.js": "/rust-wasm-react/static/js/main.4c2b86e2.chunk.js",
+    "main.js.map": "/rust-wasm-react/static/js/main.4c2b86e2.chunk.js.map",
+    "runtime-main.js": "/rust-wasm-react/static/js/runtime-main.ed4cf56a.js",
+    "runtime-main.js.map": "/rust-wasm-react/static/js/runtime-main.ed4cf56a.js.map",
+    "static/js/2.811db75c.chunk.js": "/rust-wasm-react/static/js/2.811db75c.chunk.js",
+    "static/js/2.811db75c.chunk.js.map": "/rust-wasm-react/static/js/2.811db75c.chunk.js.map",
+    "static/js/3.73b7a6ca.chunk.js": "/rust-wasm-react/static/js/3.73b7a6ca.chunk.js",
+    "b0d672ee7b6b9aa72504.module.wasm": "/rust-wasm-react/b0d672ee7b6b9aa72504.module.wasm",
+    "static/js/3.73b7a6ca.chunk.js.map": "/rust-wasm-react/static/js/3.73b7a6ca.chunk.js.map",
+    "index.html": "/rust-wasm-react/index.html",
+    "precache-manifest.e176711e575c7214afc86146afd22c2c.js": "/rust-wasm-react/precache-manifest.e176711e575c7214afc86146afd22c2c.js",
+    "service-worker.js": "/rust-wasm-react/service-worker.js",
+    "static/css/main.d275bea4.chunk.css.map": "/rust-wasm-react/static/css/main.d275bea4.chunk.css.map",
+    "static/js/2.811db75c.chunk.js.LICENSE.txt": "/rust-wasm-react/static/js/2.811db75c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed4cf56a.js",
+    "static/js/2.811db75c.chunk.js",
+    "static/css/main.d275bea4.chunk.css",
+    "static/js/main.4c2b86e2.chunk.js"
+  ]
+}
