@@ -16,22 +16,9 @@ First, we build the WASM binaries using the `wasm-pack` CLI tool:
 wasm-pack build
 ```
 
-### Move the WASM Package into the React App Directory
-
-Typically, we would want to publish the WASM package to the NPM registry and install via npm in the usual way. However for the sake of this demo, we will install it from a file in the same directory as the React app. Our `package.json` refers to the file like so: `"dbscan-wasm": "file:dbscan-wasm-0.1.0.tgz"`.
-
-To stage this file, we need tar the `pkg` directory with the WASM binaries and move it to the React app folder:
-
-```
-pushd ./pkg
-tar czfv ./dbscan-wasm-0.1.0.tgz ./
-mv dbscan-wasm-0.1.0.tgz ../app
-popd
-```
-
 ### Install the WASM Package and Start the App
 
-Lastly, we install the WASM package and start the React app.
+Typically, we would want to publish the WASM package to the NPM registry and install via npm in the usual way. However for the sake of this demo, we will install it from the filesystem. Our `package.json` refers to the file like so: `"dbscan-wasm": "file:../pkg"`. The `pkg` directory is what gets created by running the `wasm-pack build` command.
 
 ```
 pushd ./app

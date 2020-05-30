@@ -10,7 +10,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
-		"dbscan-wasm": "file:dbscan-wasm-0.1.0.tgz"
+		"dbscan-wasm": "file:../pkg"
 	},
 	"scripts": {
 		"start": "react-app-rewired start",
